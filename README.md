@@ -1,24 +1,30 @@
-# Dataset Machado de Assis
+# LSTM de Assis
+
+Código para gerar um modelo de previsão de palavras baseado nas obras de Machado de Assis utilizando Embeddings e LSTM.
+
+O modelo é criado a partir do notebook `LSTM de Assis.ipynb` no arquivo `LSTM-de Assis.h5`. Também estão disponíveis o dicionário utilizado e o dicionário de índices. O modelo é uma rede neural com 5 camadas de acordo com a seguinte configuração:
+
+```
+Model: "LSTM-de-Assis"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+embedding (Embedding)        (1, None, 128)            3635072   
+_________________________________________________________________
+lstm1 (LSTM)                 (1, None, 128)            131584    
+_________________________________________________________________
+lstm2 (LSTM)                 (1, None, 128)            131584    
+_________________________________________________________________
+densa1 (TimeDistributed)     (None, None, 128)         16512     
+_________________________________________________________________
+densa2 (TimeDistributed)     (None, None, 28399)       3663471   
+=================================================================
+Total params: 7,578,223
+Trainable params: 7,578,223
+Non-trainable params: 0
+```
 
 
-Neste repositório estão contidas 116 obras de ficção e outros textos de [Machado de Assis](https://pt.wikipedia.org/wiki/Machado_de_Assis) nos formatos `pdf` e `txt` nas categorias:
-
-  |Categoria|Livros|
-  |---------|------|
-  |Contos|7|
-  |Críticas|45|
-  |Crônicas|24|
-  |Miscelânea|10|
-  |Poesias|7|
-  |Romances|10|
-  |Teatro|10|
-  |Traduções|3|
-
-As obras são de domínio público e estão publicadas em **[http://machado.mec.gov.br](http://machado.mec.gov.br)**.
-
-Foram extraídas as informações dos cabeçalhos. Tais informações foram concatenadas em: `obras_machado_de_assis.csv`.
-
-Também está disponível o script utilizado para criação dos arquivos `txt` e `obras_machado_de_assis.csv`.
 
 ## Licença
 
